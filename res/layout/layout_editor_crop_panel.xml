@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    >
+
+    <LinearLayout
+        android:id="@+id/crop_btn_container"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:id="@+id/crop_btn_original"
+            android:layout_width="@dimen/photoeditor_tab_card_width"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:background="@drawable/selected_item_bg"
+            android:layout_gravity="center"
+             >
+
+            <ImageView
+                android:id="@+id/crop_original_icon_iv"
+                android:layout_width="@dimen/photoeditor_tab_card_icon_width"
+                android:layout_height="@dimen/photoeditor_tab_card_icon_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/photoeditor_tab_card_icon_margintop"
+                android:background="@drawable/gallery_crop_type_normal"
+                android:clickable="false"
+                 />
+
+            <TextView
+                style="@style/filter_show_main_tab_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/crop_original_icon_iv"
+                android:text="原图" />
+        </RelativeLayout>
+
+		<RelativeLayout
+            android:id="@+id/crop_btn_none"
+            android:layout_width="@dimen/photoeditor_tab_card_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="true" >
+
+            <ImageView
+                android:id="@+id/crop_free_icon_iv"
+                android:layout_width="@dimen/photoeditor_tab_card_icon_width"
+                android:layout_height="@dimen/photoeditor_tab_card_icon_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/photoeditor_tab_card_icon_margintop"
+                android:background="@drawable/gallery_crop_type_free"
+                android:clickable="false" />
+
+            <TextView
+                style="@style/filter_show_main_tab_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/crop_free_icon_iv"
+                android:text="自由" />
+        </RelativeLayout>
+        
+
+	<RelativeLayout
+            android:id="@+id/crop_btn_1to1"
+            android:layout_width="@dimen/photoeditor_tab_card_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="true" >
+
+            <ImageView
+                android:id="@+id/crop_1to1_icon_iv"
+                android:layout_width="@dimen/photoeditor_tab_card_icon_width"
+                android:layout_height="@dimen/photoeditor_tab_card_icon_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/photoeditor_tab_card_icon_margintop"
+                android:background="@drawable/gallery_crop_type_11"
+                android:clickable="false" />
+
+            <TextView
+                style="@style/filter_show_main_tab_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/crop_1to1_icon_iv"
+                android:text="1:1" />
+        </RelativeLayout>
+	<RelativeLayout
+            android:id="@+id/crop_btn_4to3"
+            android:layout_width="@dimen/photoeditor_tab_card_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="true" >
+
+            <ImageView
+                android:id="@+id/crop_4to3_icon_iv"
+                android:layout_width="@dimen/photoeditor_tab_card_icon_width"
+                android:layout_height="@dimen/photoeditor_tab_card_icon_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/photoeditor_tab_card_icon_margintop"
+                android:background="@drawable/gallery_crop_type_43"
+                android:clickable="false" />
+
+            <TextView
+                style="@style/filter_show_main_tab_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/crop_4to3_icon_iv"
+                android:text="4:3" />
+        </RelativeLayout>
+
+
+
+        <Button
+            android:id="@+id/crop_btn_3to4"
+            android:layout_width="@dimen/photoeditor_tab_card_width"
+            android:layout_height="wrap_content"
+            android:text="3:4"
+            android:visibility="gone" />
+	<RelativeLayout
+            android:id="@+id/crop_btn_5to7"
+            android:layout_width="@dimen/photoeditor_tab_card_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="true" 
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/crop_5to7_icon_iv"
+                android:layout_width="@dimen/photoeditor_tab_card_icon_width"
+                android:layout_height="@dimen/photoeditor_tab_card_icon_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/photoeditor_tab_card_icon_margintop"
+                android:background="@drawable/gallery_crop_type_54"
+                android:clickable="false" />
+
+            <TextView
+                style="@style/filter_show_main_tab_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/crop_5to7_icon_iv"
+                android:text="5:7" />
+        </RelativeLayout>
+
+
+        <Button
+            android:id="@+id/crop_btn_7to5"
+            android:layout_width="@dimen/photoeditor_tab_card_width"
+            android:layout_height="wrap_content"
+            android:text="7:5"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</LinearLayout>

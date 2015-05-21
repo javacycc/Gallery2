@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/filtershow_categoryview_background">
+
+    <HorizontalScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scrollbars="none"
+            >
+            
+        
+        <com.android.gallery3d.v5.filtershow.category.CategoryTrack
+                android:id="@+id/listItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@android:color/transparent"
+                android:dividerPadding="10dip"
+                android:layout_gravity="center"  
+                >
+          
+        </com.android.gallery3d.v5.filtershow.category.CategoryTrack>
+        
+
+    </HorizontalScrollView>
+
+
+
+</LinearLayout>

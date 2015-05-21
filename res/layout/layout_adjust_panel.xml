@@ -1,0 +1,143 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center" >
+
+        <RelativeLayout
+            android:id="@+id/tab_card_filter"
+            android:layout_width="@dimen/photoeditor_tab_card_width"
+            android:layout_height="match_parent"
+            android:clickable="true" >
+
+            <ImageView
+                android:id="@+id/fx_icon_iv"
+                android:layout_width="@dimen/photoeditor_tab_card_icon_width"
+                android:layout_height="@dimen/photoeditor_tab_card_icon_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/photoeditor_tab_card_icon_margintop"
+                android:background="@drawable/icon_adjust_quick"
+                android:clickable="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fx_icon_iv"
+                style="@style/filter_show_main_tab_text"
+                android:text="@string/photoeditor_adjust_quick" />
+        </RelativeLayout>
+
+        <RelativeLayout
+             android:id="@+id/tab_card_border"
+            android:layout_width="@dimen/photoeditor_tab_card_width"
+            android:layout_height="match_parent" 
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/border_icon_iv"
+                android:layout_width="@dimen/photoeditor_tab_card_icon_width"
+                android:layout_height="@dimen/photoeditor_tab_card_icon_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/photoeditor_tab_card_icon_margintop"
+                android:background="@drawable/filtershow_button_settings" 
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/border_icon_iv"
+                android:text="@string/photoeditor_adjust_parameter"
+                style="@style/filter_show_main_tab_text"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+             android:id="@+id/tab_card_crop"
+            android:layout_width="@dimen/photoeditor_tab_card_width"
+            android:layout_height="match_parent" >
+
+            <ImageButton
+                android:id="@+id/crop_icon_iv"
+                android:layout_width="@dimen/photoeditor_tab_card_icon_width"
+                android:layout_height="@dimen/photoeditor_tab_card_icon_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/photoeditor_tab_card_icon_margintop"
+                android:background="@drawable/filtershow_button_colors_curve" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/crop_icon_iv"
+                 android:text="@string/photoeditor_adjust_color_curve"
+                style="@style/filter_show_main_tab_text"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tab_card_rotation"
+            android:layout_width="@dimen/photoeditor_tab_card_width"
+            android:layout_height="match_parent" >
+
+            <ImageButton
+                android:id="@+id/rotation_icon_iv"
+                android:layout_width="@dimen/photoeditor_tab_card_icon_width"
+                android:layout_height="@dimen/photoeditor_tab_card_icon_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/photoeditor_tab_card_icon_margintop"
+                android:background="@drawable/filtershow_button_grad" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rotation_icon_iv"
+                android:text="@string/photoeditor_adjust_gradient"
+                style="@style/filter_show_main_tab_text" />
+        </RelativeLayout>
+
+        <RelativeLayout
+             android:id="@+id/tab_card_adjust"
+            android:layout_width="@dimen/photoeditor_tab_card_width"
+            android:layout_height="match_parent" >
+
+            <ImageButton
+                android:id="@+id/adjust_icon_iv"
+                android:layout_width="@dimen/photoeditor_tab_card_icon_width"
+                android:layout_height="@dimen/photoeditor_tab_card_icon_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/photoeditor_tab_card_icon_margintop"
+                android:background="@drawable/icon_adjust" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/adjust_icon_iv"
+                 android:text="@string/photoeditor_adjust_circle_shadow"
+                style="@style/filter_show_main_tab_text" />
+        </RelativeLayout>
+
+        <RelativeLayout
+             android:id="@+id/tab_card_draw"
+            android:layout_width="@dimen/photoeditor_tab_card_width"
+            android:layout_height="match_parent" >
+
+            <ImageButton
+                android:id="@+id/draw_icon_iv"
+                android:layout_width="@dimen/photoeditor_tab_card_icon_width"
+                android:layout_height="@dimen/photoeditor_tab_card_icon_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/photoeditor_tab_card_icon_margintop"
+                android:background="@drawable/icon_draw" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/draw_icon_iv"
+                android:text="@string/photoeditor_adjust_no_color"
+                style="@style/filter_show_main_tab_text" >
+            </TextView>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

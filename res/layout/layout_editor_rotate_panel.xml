@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center" >
+
+   <LinearLayout
+        android:id="@+id/rotate_btn_container"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+         >
+		<RelativeLayout
+            android:id="@+id/rotate_btn_clockwise"
+            android:layout_width="@dimen/photoeditor_tab_card_width"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_gravity="center_horizontal"
+             >
+
+            <ImageView
+                android:id="@+id/clockwise_icon_iv"
+                android:layout_width="@dimen/photoeditor_tab_card_icon_width"
+                android:layout_height="@dimen/photoeditor_tab_card_icon_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/photoeditor_tab_card_icon_margintop"
+                android:background="@drawable/gallery_filter_rotate_clockwise"
+                android:clickable="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/clockwise_icon_iv"
+                style="@style/filter_show_main_tab_text"
+                android:text="顺时针" />
+        </RelativeLayout>
+        
+		<RelativeLayout
+            android:id="@+id/rotate_btn_anticlockwise"
+            android:layout_width="@dimen/photoeditor_tab_card_width"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_gravity="center_horizontal"
+             >
+
+            <ImageView
+                android:id="@+id/anticlockwise_icon_iv"
+                android:layout_width="@dimen/photoeditor_tab_card_icon_width"
+                android:layout_height="@dimen/photoeditor_tab_card_icon_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/photoeditor_tab_card_icon_margintop"
+                android:background="@drawable/gallery_filter_rotate_anticlockwise"
+                android:clickable="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/anticlockwise_icon_iv"
+                style="@style/filter_show_main_tab_text"
+                android:text="逆时针" />
+        </RelativeLayout>
+
+		<RelativeLayout
+            android:id="@+id/rotate_btn_mirror_left"
+            android:layout_width="@dimen/photoeditor_tab_card_width"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_gravity="center_horizontal"
+             >
+
+            <ImageView
+                android:id="@+id/mirror_left_icon_iv"
+                android:layout_width="@dimen/photoeditor_tab_card_icon_width"
+                android:layout_height="@dimen/photoeditor_tab_card_icon_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/photoeditor_tab_card_icon_margintop"
+                android:background="@drawable/gallery_filter_rotate_leftright"
+                android:clickable="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mirror_left_icon_iv"
+                style="@style/filter_show_main_tab_text"
+                android:text="左右" />
+        </RelativeLayout>
+        
+		<RelativeLayout
+            android:id="@+id/rotate_btn_mirror_top"
+            android:layout_width="@dimen/photoeditor_tab_card_width"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_gravity="center_horizontal"
+             >
+
+            <ImageView
+                android:id="@+id/mirror_top_icon_iv"
+                android:layout_width="@dimen/photoeditor_tab_card_icon_width"
+                android:layout_height="@dimen/photoeditor_tab_card_icon_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/photoeditor_tab_card_icon_margintop"
+                android:background="@drawable/gallery_filter_rotate_updown"
+                android:clickable="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mirror_top_icon_iv"
+                style="@style/filter_show_main_tab_text"
+                android:text="上下" />
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

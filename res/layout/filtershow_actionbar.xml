@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2012 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    >
+    <ImageButton 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:id="@+id/filtershow_done"
+    android:gravity="center_vertical"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:src="@drawable/gallery_menu_fine"
+    />
+    <TextView 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/filtershow_button_background"
+    android:id="@+id/filtershow_reset"
+    android:textAllCaps="true"
+    android:text="@string/reset"
+    android:gravity="center_vertical"
+    android:layout_centerVertical="true"
+    android:textSize="14sp"
+    android:drawablePadding="8dip" 
+    android:layout_toLeftOf="@id/filtershow_done"
+    android:layout_marginRight="10dp"
+    android:visibility="gone"
+    />
+
+    <ImageButton
+        android:id="@+id/filtershow_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/filtershow_done"
+        android:src="@drawable/icon_back"
+        android:background="@android:color/transparent"
+       />
+
+    <ImageButton
+        android:id="@+id/editor_action_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/gallery_icon_cancel"
+        android:background="@android:color/transparent"
+        />
+
+    <ImageButton
+        android:id="@+id/editor_action_apply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/gallery_menu_fine"
+        android:background="@android:color/transparent"
+         />
+
+</RelativeLayout>

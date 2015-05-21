@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+
+    <com.android.gallery3d.v5.filtershow.ui.HorizontalListView
+        android:id="@+id/action_lv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+         >
+    </com.android.gallery3d.v5.filtershow.ui.HorizontalListView>
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbars="none" >
+        
+        <com.android.gallery3d.v5.filtershow.category.CategoryTrack
+                android:id="@+id/listItems"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/category_panel_height"
+                android:divider="@android:color/transparent"
+                android:orientation="horizontal"
+                android:dividerPadding="8dip"
+                >
+          
+        </com.android.gallery3d.v5.filtershow.category.CategoryTrack>
+
+    </HorizontalScrollView>
+
+</RelativeLayout>
