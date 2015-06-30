@@ -163,7 +163,8 @@ public class ImagePreset {
         if (pos != -1) {
             mFilters.elementAt(pos).useParametersFrom(rep);
         } else {
-            addFilter(rep.copy());
+        	addFilter(rep.copy());
+        	
         }
     }
 

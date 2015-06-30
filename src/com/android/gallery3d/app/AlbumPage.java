@@ -377,7 +377,7 @@ public class AlbumPage extends ActivityState implements GalleryActionBar.Cluster
         PhotoFallbackEffect effect = new PhotoFallbackEffect();
         ArrayList<MediaItem> items =  mMediaSet.getMediaItem(0, 20);
         for(MediaItem item : items){
-        	//effect.addEntry(item.getPath(), new Rect(0, 0, 300, 300), new RawTexture(300, 300, true).);
+        	//effect.addEntry(item.getPath(), new Rect(0, 0, 300, 300), new RawTexture(300, 300, true));
         }
         mActivity.getTransitionStore().put(KEY_RESUME_ANIMATION,effect);
         if (data.getBoolean(KEY_AUTO_SELECT_ALL)) {
@@ -401,13 +401,14 @@ public class AlbumPage extends ActivityState implements GalleryActionBar.Cluster
                 }
             }
         };
+       // setContentPane(mRootPane);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         mIsActive = true;
-
+       setContentPane(mRootPane);
         mResumeEffect = mActivity.getTransitionStore().get(KEY_RESUME_ANIMATION);
         if (mResumeEffect != null) {
             mAlbumView.setSlotFilter(mResumeEffect);
@@ -415,15 +416,15 @@ public class AlbumPage extends ActivityState implements GalleryActionBar.Cluster
             mResumeEffect.start();
         }
 
-        setContentPane(mRootPane);
+       
 
         boolean enableHomeButton = (mActivity.getStateManager().getStateCount() > 1) |
                 mParentMediaSetString != null;
-        GalleryActionBar actionBar = mActivity.getGalleryActionBar();
-        actionBar.setDisplayOptions(enableHomeButton, false);
-        if (!mGetContent) {
-            actionBar.enableAlbumModeMenu(GalleryActionBar.ALBUM_GRID_MODE_SELECTED, this);
-        }
+//        GalleryActionBar actionBar = mActivity.getGalleryActionBar();
+//        actionBar.setDisplayOptions(enableHomeButton, false);
+//        if (!mGetContent) {
+//            actionBar.enableAlbumModeMenu(GalleryActionBar.ALBUM_GRID_MODE_SELECTED, this);
+//        }
 
         // Set the reload bit here to prevent it exit this page in clearLoadingBit().
         setLoadingBit(BIT_LOADING_RELOAD);

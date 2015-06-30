@@ -21,7 +21,11 @@ import com.adobe.xmp.XMPMeta;
 import com.adobe.xmp.XMPMetaFactory;
 import com.adobe.xmp.options.SerializeOptions;
 
-
+/**
+ * 
+ * @author ycc
+ *
+ */
 public class XmpUtilHelper {
 	public static final String TAG = "XmpUtilHelper";
 	public static int EXIF_MARK = 0xFFE1;
@@ -205,15 +209,6 @@ public class XmpUtilHelper {
         return ((ch1 << 8) + (ch2 << 0));
     }
 
-    /** 
-     * byte������ȡint��ֵ��������������(��λ��ǰ����λ�ں�)��˳�򣬺ͺ�intToBytes��������ʹ��
-     *  
-     * @param src 
-     *            byte���� 
-     * @param offset 
-     *            ������ĵ�offsetλ��ʼ 
-     * @return int��ֵ 
-     */  
 	public static int bytesToInt(byte[] src, int offset) {
 		int value;	
 		value = (int) ((src[offset] & 0xFF) 
@@ -229,9 +224,7 @@ public class XmpUtilHelper {
 				| ((src[offset+1] & 0xFF)<<8));
 		return value;
 	}
-	 /** 
-     * byte������ȡint��ֵ��������������(��λ�ں󣬸�λ��ǰ)��˳�򡣺�intToBytes2��������ʹ��
-     */
+
 	public static int bytesToInt2(byte[] src, int offset) {
 		int value;	
 		value = (int) ( ((src[offset] & 0xFF)<<24)

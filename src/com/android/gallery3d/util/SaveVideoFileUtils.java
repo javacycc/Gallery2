@@ -19,14 +19,18 @@ package com.android.gallery3d.util;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.CompressFormat;
 import android.media.MediaMetadataRetriever;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore.Video;
 import android.provider.MediaStore.Video.VideoColumns;
 
-
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
@@ -150,6 +154,20 @@ public class SaveVideoFileUtils {
         }
         retriever.release();
         return durationMs;
+    }
+    
+    public static void savePhoto(Bitmap bitmap){
+    	try {
+			FileOutputStream out = new FileOutputStream(Environment.getExternalStorageDirectory().getAbsolutePath()+"/photo.jpg");
+			bitmap.compress(CompressFormat.JPEG, 100, out);
+			out.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
 }

@@ -1477,6 +1477,7 @@ class PositionController {
             if (mCurrentX != x || mCurrentY != y) {
                 return doAnimation(x, y, ANIM_KIND_SNAPBACK);
             }
+            
             return false;
         }
 
@@ -1496,6 +1497,7 @@ class PositionController {
                 mDefaultX = 0;
                 mDefaultY = 0;
             }
+            
         }
 
         // Starts an animation for the platform.

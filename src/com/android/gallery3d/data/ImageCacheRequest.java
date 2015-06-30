@@ -22,6 +22,8 @@ import android.graphics.BitmapFactory;
 import com.android.gallery3d.app.GalleryApp;
 import com.android.gallery3d.common.BitmapUtils;
 import com.android.gallery3d.data.BytesBufferPool.BytesBuffer;
+import com.android.gallery3d.data.LocalImage.LocalImageRequest;
+import com.android.gallery3d.util.GalleryUtils;
 import com.android.gallery3d.util.ThreadPool.Job;
 import com.android.gallery3d.util.ThreadPool.JobContext;
 
@@ -33,6 +35,7 @@ abstract class ImageCacheRequest implements Job<Bitmap> {
     private int mType;
     private int mTargetSize;
     private long mTimeModified;
+    
 
     public ImageCacheRequest(GalleryApp application,
             Path path, long timeModified, int type, int targetSize) {
@@ -52,7 +55,14 @@ abstract class ImageCacheRequest implements Job<Bitmap> {
     @Override
     public Bitmap run(JobContext jc) {
         ImageCacheService cacheService = mApplication.getImageCacheService();
-
+        
+        if(this instanceof LocalImageRequest){
+        	LocalImageRequest r = (LocalImageRequest)this;
+        	byte[] b = GalleryUtils.getBitmapData(r.mLocalFilePath);
+        	if(b!=null){
+        		return BitmapFactory.decodeByteArray(b, 0, b.length);
+        	}
+        }
         BytesBuffer buffer = MediaItem.getBytesBufferPool().get();
         try {
             boolean found = cacheService.getImageData(mPath, mTimeModified, mType, buffer);
@@ -95,6 +105,7 @@ abstract class ImageCacheRequest implements Job<Bitmap> {
         if (jc.isCancelled()) return null;
 
         cacheService.putImageData(mPath, mTimeModified, mType, array);
+        
         return bitmap;
     }
 

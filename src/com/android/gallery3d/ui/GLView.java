@@ -16,15 +16,14 @@
 
 package com.android.gallery3d.ui;
 
+import android.annotation.SuppressLint;
 import android.graphics.Rect;
 import android.os.SystemClock;
 import android.view.MotionEvent;
-
 import com.android.gallery3d.anim.CanvasAnimation;
 import com.android.gallery3d.anim.StateTransitionAnimation;
 import com.android.gallery3d.common.Utils;
 import com.android.gallery3d.glrenderer.GLCanvas;
-
 import java.util.ArrayList;
 
 // GLView is a UI component. It can render to a GLCanvas and accept touch
@@ -42,6 +41,7 @@ import java.util.ArrayList;
 // from main thread (like a Handler) in your GLView, you need to call
 // lockRendering() if the rendering thread should not run at the same time.
 //
+@SuppressLint("WrongCall")
 public class GLView {
     private static final String TAG = "GLView";
 
@@ -345,7 +345,7 @@ public class GLView {
         return mPaddings;
     }
 
-    public void layout(int left, int top, int right, int bottom) {
+	public void layout(int left, int top, int right, int bottom) {
         boolean sizeChanged = setBounds(left, top, right, bottom);
         mViewFlags &= ~FLAG_LAYOUT_REQUESTED;
         // We call onLayout no matter sizeChanged is true or not because the

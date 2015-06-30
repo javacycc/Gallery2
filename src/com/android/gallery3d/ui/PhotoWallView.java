@@ -48,7 +48,7 @@ public class PhotoWallView extends GLView {
 		mGestureDetector = new GestureDetector(activity,
 				new PhotoWallGestureListener());
 		mPhotoAdatper = new PhotoWallAdapter() {
-			int[] slots = { 6, 3, 5, 8, 4, 7, 10 };
+			int[] slots = { 6, 3, 5, 8, 4, 7, 10  };
 
 			@Override
 			public int getSlotCount(int position) {
@@ -144,7 +144,9 @@ public class PhotoWallView extends GLView {
 		updateScrollPosition(mScroller.getPosition(), false);
 		canvas.translate(-mScrollX, -mScrollY);
 		for (int i = 0; i < mPhotoAdatper.getCount(); i++) {
+			
 			Rect rect = mLayout.getItemRect(i);
+			if(checkPass(rect)) continue;
 			canvas.save(GLCanvas.SAVE_FLAG_ALPHA | GLCanvas.SAVE_FLAG_MATRIX);
 			canvas.translate(rect.left, rect.top, 0);
 			renderTitle(canvas);
@@ -160,6 +162,19 @@ public class PhotoWallView extends GLView {
 		 if (more) invalidate();
 	}
 
+	public boolean checkPass(Rect rect){
+		Log.d(TAG, rect.toString());
+		int mButtomScrollY = mScrollY +1920;
+		if(rect.top>=mScrollY&&(rect.top+rect.bottom)<=mButtomScrollY){
+			return false;
+		}
+		if(rect.top<=mScrollY&&rect.top+rect.bottom<=mButtomScrollY){
+			return false;
+		}
+		return true;
+		
+	}
+	
 	protected void renderTitle(GLCanvas canvas) {
 		canvas.fillRect(0, 0, 1080, mLayout.getItemTitleHeight(),
 				getRandomColor());
@@ -179,7 +194,7 @@ public class PhotoWallView extends GLView {
 				canvas.save(GLCanvas.SAVE_FLAG_ALPHA
 						| GLCanvas.SAVE_FLAG_MATRIX);
 				canvas.translate(x, y);
-				canvas.fillRect(5, 5, 265, 265, getRandomColor());
+				canvas.fillRect(5, 5, 265, 265, Color.BLUE);
 				canvas.restore();
 				x += 270;
 			}
@@ -219,6 +234,7 @@ public class PhotoWallView extends GLView {
 		private int mSlotGap;
 		ArrayList<Rect> rects = new ArrayList<Rect>();
 		private int mItemTitleHeight = 150;
+		int totalHeight ;
 
 		public Rect getItemRect(int position) {
 			if (rects.size() <= position) {
@@ -229,7 +245,7 @@ public class PhotoWallView extends GLView {
 		}
 
 		public int getScrollLimit() {
-			return 10000;
+			return totalHeight-1920;
 		}
 
 		public int getItemTitleHeight() {
@@ -240,8 +256,8 @@ public class PhotoWallView extends GLView {
 			if (rects.size() > 0) {
 				rects.clear();
 			}
-
-			int totalHeight = 0;
+			totalHeight = 0;
+			
 			for (int i = 0; i < mPhotoAdatper.getCount(); i++) {
 				int slotCount = mPhotoAdatper.getSlotCount(i);
 				int row = (slotCount % 4) == 0 ? (slotCount / 4)

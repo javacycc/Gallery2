@@ -177,7 +177,7 @@ public class LocalImage extends LocalMediaItem {
     }
 
     public static class LocalImageRequest extends ImageCacheRequest {
-        private String mLocalFilePath;
+        public String mLocalFilePath;
 
         LocalImageRequest(GalleryApp application, Path path, long timeModified,
                 int type, String localFilePath) {

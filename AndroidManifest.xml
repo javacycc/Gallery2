@@ -272,7 +272,7 @@
                 android:theme="@style/Theme.Gallery"
                 android:configChanges="orientation|keyboardHidden|screenSize" />
 
-        <!-- <provider android:name="com.android.gallery3d.provider.GalleryProvider"
+         <provider android:name="com.android.gallery3d.provider.GalleryProvider"
                 android:syncable="false"
                 android:grantUriPermissions="true"
                 android:exported="true"
@@ -282,7 +282,7 @@
                 android:name="com.android.photos.data.PhotoProvider"
                 android:authorities="com.android.gallery3d.photoprovider"
                 android:syncable="false"
-                android:exported="false"/> -->
+                android:exported="false"/>
         <activity android:name="com.android.gallery3d.gadget.WidgetClickHandler" />
         <activity android:name="com.android.gallery3d.app.DialogPicker"
                 android:configChanges="keyboardHidden|orientation|screenSize"
@@ -329,6 +329,10 @@
         </receiver>
 
         <service android:name="com.android.camera.MediaSaveService" />
+        
+        
+        <activity android:name="com.android.photos.GalleryActivity"></activity>
+        <activity android:name="com.android.photos.AlbumActivity"></activity>
     </application>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />

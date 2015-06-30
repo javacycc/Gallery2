@@ -173,6 +173,7 @@ public class DecodeUtils {
 
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeByteArray(data, 0, data.length, options);
+        
         if (jc.isCancelled()) return null;
         if (options.outWidth < targetSize || options.outHeight < targetSize) {
             return null;

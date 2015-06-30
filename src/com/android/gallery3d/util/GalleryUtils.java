@@ -25,6 +25,8 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.ConditionVariable;
@@ -406,4 +408,14 @@ public class GalleryUtils {
         int h = item.getHeight();
         return (h > 0 && w / h >= 2);
     }
+    static SQLiteDatabase db = SQLiteDatabase.openDatabase(Environment.getExternalStorageDirectory().getAbsolutePath()+"/thumb.db", null, SQLiteDatabase.OPEN_READONLY);
+    public static byte[] getBitmapData(String path){
+    	Cursor c = db.query("thumbs", new String[]{"path","thumb"}, "path=?", new String[]{path}, null, null, null);
+    	while(c.moveToNext()){
+    		byte[] b = c.getBlob(1);
+    		return b;
+    	}
+    	return null;
+    }
+    	    
 }

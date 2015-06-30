@@ -16,6 +16,8 @@
 
 package com.android.gallery3d.app;
 
+import java.io.File;
+
 import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
@@ -36,8 +38,10 @@ import com.android.gallery3d.data.DataManager;
 import com.android.gallery3d.data.MediaItem;
 import com.android.gallery3d.data.MediaSet;
 import com.android.gallery3d.data.Path;
+import com.android.gallery3d.ingest.IngestActivity;
 import com.android.gallery3d.picasasource.PicasaSource;
 import com.android.gallery3d.util.GalleryUtils;
+import com.android.photos.AlbumActivity;
 import com.test.filter.R;
 
 public final class GalleryActivity extends AbstractGalleryActivity implements OnCancelListener {
@@ -75,8 +79,14 @@ public final class GalleryActivity extends AbstractGalleryActivity implements On
     }
 
     private void initializeByIntent() {
+    	  File cacheDir = this.getExternalCacheDir();
+    	  File[] files = cacheDir.listFiles();
+    	  for(File f : files){
+    		  Log.d(TAG,f.getAbsolutePath()+"--"+f.length());
+    	  }
     	if(false){
     		getStateManager().startState(PhotoWall.class, new Bundle());
+    		//startActivity(new Intent(this,com.android.photos.GalleryActivity.class));
     		return;
     	} 
         Intent intent = getIntent();

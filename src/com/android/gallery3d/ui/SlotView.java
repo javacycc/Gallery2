@@ -95,24 +95,11 @@ public class SlotView extends GLView {
 
     // to prevent allocating memory
     private final Rect mTempRect = new Rect();
-    static BitmapTexture backgrand ;
     int width;
     int height;
     
 
     public SlotView(AbstractGalleryActivity activity, Spec spec) {
-    	DisplayMetrics dm = new DisplayMetrics();
-		activity.getWindow().getWindowManager().getDefaultDisplay().getMetrics(dm);
-    		
-    		width = dm.widthPixels;
-    		height = dm.heightPixels;
-    		//backgrand =new BitmapTexture(BitmapFactory.decodeResource(activity.getResources(), R.drawable.test2));
-    		if(backgrand==null){
-    			Bitmap b = Bitmap.createBitmap(width, height, Config.ARGB_8888);
-    			b.eraseColor(Color.WHITE);
-    			backgrand =new BitmapTexture(b);
-    			
-    		}
         mGestureDetector = new GestureDetector(activity, new MyGestureListener());
         mScroller = new ScrollerHelper(activity);
         mHandler = new SynchronizedHandler(activity.getGLRoot());
@@ -295,7 +282,7 @@ public class SlotView extends GLView {
         if (mAnimation != null) {
             more |= mAnimation.calculate(animTime);
         }
-      
+        
        //canvas.drawTexture(backgrand, 0, 0,width,height);
        canvas.translate(-mScrollX, -mScrollY);
 
@@ -321,7 +308,8 @@ public class SlotView extends GLView {
         }
 
        canvas.translate(mScrollX, mScrollY);
-       
+      // Log.d(TAG, mScrollX+":"+mScrollY);
+       //canvas.fillRect(-mScrollX, -mScrollY, 300, 300, Color.RED);
 //       GLPaint p = new GLPaint();
 //       p.setColor(Color.WHITE);
 //       p.setLineWidth(100);
@@ -705,7 +693,7 @@ public class SlotView extends GLView {
             float distance = WIDE ? distanceX : distanceY;
             int overDistance = mScroller.startScroll(
                     Math.round(distance), 0, mLayout.getScrollLimit());
-            Log.d(TAG, "distance="+Math.round(distance)+", limit="+mLayout.getScrollLimit());
+            //Log.d(TAG, "distance="+Math.round(distance)+", limit="+mLayout.getScrollLimit());
             if (mOverscrollEffect == OVERSCROLL_3D && overDistance != 0) {
                 mPaper.overScroll(overDistance);
             }

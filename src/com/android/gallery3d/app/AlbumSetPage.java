@@ -322,6 +322,7 @@ public class AlbumSetPage extends ActivityState implements
         super.onCreate(data, restoreState);
         initializeViews();
         initializeData(data);
+        
         Context context = mActivity.getAndroidContext();
         mGetContent = data.getBoolean(GalleryActivity.KEY_GET_CONTENT, false);
         mGetAlbum = data.getBoolean(GalleryActivity.KEY_GET_ALBUM, false);
@@ -345,6 +346,8 @@ public class AlbumSetPage extends ActivityState implements
                 }
             }
         };
+        
+        //setContentPane(mRootPane);
     }
 
     @Override

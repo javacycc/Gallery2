@@ -143,10 +143,13 @@ public class EditorPanel extends LewaEditorBaseFragment {
 
         showImageStatePanel(filterShowActivity.isShowingImageStatePanel());
     }
-    public void apply(){
-    	if(mEditor!=null){
-    		mEditor.finalApplyCalled();
+    public void apply(){    	
+    	if(mEditor == null) return ;
+    	
+    	if(mEditor.getID()==R.id.basicEditor&&MasterImage.getImage().getCurrentFilterRepresentation()==null){
+    		return;
     	}
+    	mEditor.finalApplyCalled();
     }
     @Override
     public void onDetach() {

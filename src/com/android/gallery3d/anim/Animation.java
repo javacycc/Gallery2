@@ -18,6 +18,7 @@ package com.android.gallery3d.anim;
 
 import android.view.animation.Interpolator;
 
+import com.android.gallery3d.app.Log;
 import com.android.gallery3d.common.Utils;
 
 // Animation calculates a value according to the current input time.

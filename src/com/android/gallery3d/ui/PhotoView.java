@@ -36,6 +36,7 @@ import com.android.gallery3d.data.MediaItem;
 import com.android.gallery3d.data.MediaObject;
 import com.android.gallery3d.data.Path;
 import com.android.gallery3d.glrenderer.GLCanvas;
+import com.android.gallery3d.glrenderer.GLPaint;
 import com.android.gallery3d.glrenderer.RawTexture;
 import com.android.gallery3d.glrenderer.ResourceTexture;
 import com.android.gallery3d.glrenderer.StringTexture;
@@ -1460,6 +1461,7 @@ public class PhotoView extends GLView {
         // Draw photos from back to front
         for (int i = neighbors; i >= -neighbors; i--) {
             Rect r = mPositionController.getPosition(i);
+            //Log.d(TAG, "i="+i+",rect="+r);
             mPictures.get(i).draw(canvas, r);
         }
 
